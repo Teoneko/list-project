@@ -1,0 +1,20 @@
+<ul class="nav nav-tabs">
+	<li class="nav-item" *ngFor="let tab of tabs; let i = index">
+		<a class="nav-link" [routerLink]="['']" [queryParams]="{tab: i}">{{tab}}</a>
+	</li>
+</ul>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let order of orders | keyvalue">
+			<td>{{order.key}}</td>
+			<td>{{order.value}}</td>
+		</tr>
+	</tbody>
+</table>
