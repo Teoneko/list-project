@@ -1,6 +1,7 @@
 <ul class="nav nav-tabs">
 	<li class="nav-item" *ngFor="let tab of tabs; let i = index">
-		<a class="nav-link" [routerLink]="['']" [queryParams]="{tab: i}">{{tab}}</a>
+		<a class="nav-link" [routerLink]="['/navigator']" [queryParams]="{tab: i}"
+			[ngClass]="{'active' : i === +tabActive}">{{tab}}</a>
 	</li>
 </ul>
 

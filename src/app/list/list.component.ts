@@ -19,15 +19,14 @@ export class ListComponent implements OnInit {
 
 	tabs: Array<string> = ['income', 'outcome', 'loans', 'investments'];
 
+	tabActive: string = '';
+
 	ngOnInit(): void {
-		this.filtering(this.tabs[0])
 		this.route.queryParamMap
 			.subscribe(params => {
 				this.orders = {};
-				const tabIndex = params.get('tab');
-				if (tabIndex) {
-					this.filtering(this.tabs[+tabIndex])
-				}
+				this.tabActive = params.get('tab') ?? '0';
+				this.filtering(this.tabs[+this.tabActive]);
 			});
 	}
 

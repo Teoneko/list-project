@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { NavigatorComponent } from './navigator/navigator.component';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
+import { SummaryComponent } from './summary/summary.component';
 
 
 const routes: Routes = [
-	{ path: '', component: ListComponent },
-	{ path: 'navigator', component: NavigatorComponent },
-
+	{ path: '', component: SummaryComponent },
+	{ path: 'navigator', component: ListComponent },
 ]
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		NavigatorComponent,
 		ListComponent,
+		SummaryComponent,
 	],
 	imports: [
 		BrowserModule,
