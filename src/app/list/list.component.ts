@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ordersData } from '../../assets/orders';
+import { ordersData, types, IFilteredNames } from '../../assets/orders';
 import { ActivatedRoute } from '@angular/router';
 
-interface IFiltered {
-	[key: string]: number
-}
 
 @Component({
 	selector: 'app-list',
@@ -13,11 +10,11 @@ interface IFiltered {
 })
 
 export class ListComponent implements OnInit {
-	orders: IFiltered = {};
+	orders: IFilteredNames = {};
 
 	constructor(private route: ActivatedRoute) { }
 
-	tabs: Array<string> = ['income', 'outcome', 'loans', 'investments'];
+	tabs = types;
 
 	tabActive: string = '';
 

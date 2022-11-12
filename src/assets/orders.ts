@@ -12,8 +12,31 @@ interface IOrders {
 	address: string;
 }
 
+export interface IFilteredNames {
+	[key: string]: number;
+}
+
+export interface IFilteredValues {
+	key: string;
+	value: number;
+}
+
+export const types: Array<string> = ['income', 'outcome', 'loans', 'investments'];
 
 export const ordersData: Array<IOrders> = [
+	{
+		"_id": "5d99beb677015a5c2c14542e",
+		"amount": 1,
+		"type": "outcome",
+		"name": {
+			"first": "Jordan",
+			"last": "Bauer"
+		},
+		"company": "SNORUS",
+		"email": "jordan.bauer@snorus.net",
+		"phone": "+1 (901) 404-2928",
+		"address": "712 Bills Place, Cochranville, Florida, 6951"
+	},
 	{
 		"_id": "5d99beb677015a5c2c14542e",
 		"amount": 1,
