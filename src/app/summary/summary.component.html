@@ -1,22 +1,27 @@
-<div class="card text-center">
-	<div class="card-header"></div>
-	<div class="card-body">
-		<h5 class="card-title">Welcome</h5>
-		<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		<a routerLink="/navigator" class="btn btn-primary">See transactions</a>
+<div class="col-8 mx-auto">
+	<div class="card text-center">
+		<div class="card-header"></div>
+		<div class="card-body">
+			<h5 class="card-title">Welcome</h5>
+			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+			<a routerLink="/navigator" class="btn btn-primary">See transactions</a>
+		</div>
+		<div class="card-footer text-muted">
+			<p>You have {{sumOrders}} transactions</p>
+		</div>
 	</div>
-	<div class="card-footer text-muted">
-		<p>You have {{sumOrders}} transactions</p>
-	</div>
-</div>
-<div>
-	<div class="row">
-		<div class="col-sm-6 mt-3" *ngFor=" let tab of sumTypes; let i = index">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">{{tab.value}}</h5>
-					<p class="card-text">{{tab.key}}</p>
-					<a [routerLink]="['/navigator']" [queryParams]="{tab:i}" class="btn btn-primary">See all</a>
+	<div>
+		<div class="row">
+			<div class="col-sm-6 mt-3" *ngFor=" let tab of sumTypes; let i = index">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">{{tab.value}}</h5>
+						<p class="card-text">{{tab.key}}</p>
+						<div class="d-flex justify-content-end">
+							<a [routerLink]="['/navigator']" [queryParams]="{tab:i}" class="btn btn-primary text-right">See
+								all</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,15 +1,15 @@
-<ul class="nav nav-tabs">
-	<li class="nav-item" *ngFor="let tab of tabs; let i = index">
+<ul class="nav nav-tabs d-flex justify-content-center">
+	<li class="nav-item rounded-top" *ngFor="let tab of tabs; let i = index">
 		<a class="nav-link" [routerLink]="['/navigator']" [queryParams]="{tab: i}"
 			[ngClass]="{'active' : i === +tabActive}">{{tab}}</a>
 	</li>
 </ul>
 
-<table class="table">
+<table class="table text-center mt-4 col-md-6 mx-auto">
 	<thead>
 		<tr>
-			<th scope="col">Name</th>
-			<th scope="col">Amount</th>
+			<th scope="col" class="border-0">Name</th>
+			<th scope="col" class="border-0">Amount</th>
 		</tr>
 	</thead>
 	<tbody>
